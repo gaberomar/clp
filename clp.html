@@ -43,8 +43,8 @@ function gParam(name)
 tvf(gParam('sv'));
 
 function load_player(sv_channel){
-var playerElement = document.getElementById('player');
 var player = new Clappr.Player({
+ parentId: "#player",                                     
  height: '100%',
  width: '100%',
 autoPlay: true,
