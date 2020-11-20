@@ -11,6 +11,59 @@ function getParam ( sname )
 var sv = getParam("sv");
 
 </script>
+<script type='text/javascript'>
+//<![CDATA[
+document.addEventListener('click', function(evt) {
+  if (evt.target.href && evt.target.href.split('?')[0].endsWith("m3u8")) {
+    evt.preventDefault();
+    evt.stopPropagation();
+   Player.extension.sendMessage({command: 'playM3u8', url: evt.target.href}, function(response) {});
+  }
+});
+//]]>
+</script>
+
+<SCRIPT> 
+ return false; 
+} 
+function noleftclick(e)     
+{ 
+    if (window.Event)     
+    { 
+        if (e.which == 2 || e.which == 3) 
+            return false; 
+    } 
+    else 
+        if (event.button == 2 || event.button == 1) 
+        { 
+            event.cancelBubble = true ; 
+            event.returnValue = false; 
+            return false; 
+        } 
+} 
+document.oncontextmenu = nocontextmenu;         
+document.onmousedown = noleftclick;     
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.1"> 
+ 
+        function right(e) { 
+            if (navigator.appName == 'Netscape' &&  
+                (e.which == 3 || e.which == 2)) 
+            return false; 
+                else if (navigator.appName == 'Microsoft Internet Explorer' &&  
+                (event.button == 2 || event.button == 3)) { 
+                alert(".:H.I.G.H.S.E.C.U.R.I.T.Y:."); 
+            return false; 
+        } 
+            return true; 
+        } 
+        document.onmousedown=right; 
+        document.onmouseup=right; 
+        if (document.layers) window.captureEvents(Event.MOUSEDOWN); 
+        if (document.layers) window.captureEvents(Event.MOUSEUP); 
+        window.onmousedown=right; 
+        window.onmouseup=right; 
+</script>
   <script src="https://cdn.jsdelivr.net/npm/clappr@latest"></script> 
   <script src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script> 
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js></script> 
