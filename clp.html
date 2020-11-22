@@ -9,18 +9,6 @@
 <style>html,body{margin:0;padding:0;background:#000;;}</style></head>
 <meta charset="utf-8">
 
-<script type="7fd48e4e9b637a138f663eba-text/javascript">
-function getParam ( sname )
-{
-  var params = location.search.substr(location.search.indexOf("?")+1);
-  var sval =  params.replace("sv=", "");
-  
-  return sval;
-}
-var sv = getParam("sv");
-
-</script>
- 
 <script type='text/javascript'>
 //<![CDATA[
 document.addEventListener('click', function(evt) {
@@ -110,15 +98,15 @@ body,html{margin:0;padding:0;width:100%;height:100%;background-color:#000}html{f
  <body>
  <div class="player"></div> 
         <script> 
-               if (p2pml.hlsjs.Engine.isSupported()) { 
+                if (p2pml.hlsjs.Engine.isSupported()) { 
                 var engine = new p2pml.hlsjs.Engine(); 
                 var player = new Clappr.Player({ 
-                 source: sv,  
+                source: "undefined", 
                 plugins: [LevelSelector,ChromecastPlugin], 
                 parentId: '.player', 
                 autoPlay: true, 
                 mute: false, 
-               hideVolumeBar:false, 
+                hideVolumeBar:false, 
                 width: '100%', 
                 height: '100%', 
                 playback: { 
