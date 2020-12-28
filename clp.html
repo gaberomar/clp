@@ -16,14 +16,15 @@ var sv = getParam("sv");
        <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>    
         <script src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js" type="text/javascript"></script> 
        <div  class="video-container" id="video-container" >
-                                                                    <script>
-                                                                     window.onload = function() {                       
-                                                                      function playM3u8(url, license){ 
+                                        <script>
+                                 window.onload = function() {                       
+                                function playM3u8(url, license){ 
     				var player = new Clappr.Player({
-                                                                        source: sv,				
+                                 source: sv,				
 				 watermark: "https://1.bp.blogspot.com/-JfWb2LWM2_M/Xqt1muzh4CI/AAAAAAAAI1I/mHIUUcGGnMMQ_nrZ-1lfIeMoRM2OpLmBQCK4BGAYYCw/s1600/logo1.png", position: 'top-right',      			               
-                                                                        baseUrl: "http://www.koraglive.cf/",
+                                baseUrl: "http://www.koraglive.cf/",
 				autoPlay: "true",
+				hideVolumeBar: true,   
     				mediacontrol: {seekbar: "#08fd31", buttons: "#08fd31"},
 				width: "100%",
 				plugins:  [LevelSelector],
