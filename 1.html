@@ -74,24 +74,20 @@ var sv = getParam(" ");
                },
     watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", position: 'bottom-left',
     plugins: [LevelSelector, ErrorPlugin, HlsjsPlayback, Clappr.FlasHLS], 
-    hlsUseNextLevel: false,
-    hlsMinimumDvrSize: 60,
-    hlsRecoverAttempts: 16,
-    playback: {
-      extrapolatedWindowNumSegments: 2,
-      triggerFatalErrorOnResourceDenied: false,
       playback: {
       hlsjsConfig: {
+	 hlsUseNextLevel: false,
+    hlsMinimumDvrSize: 60,
+    hlsRecoverAttempts: 16,      
         debug: true, 
         enableworker: false,
-
-}
- }
+      extrapolatedWindowNumSegments: 2,
+      triggerFatalErrorOnResourceDenied: false,
+        }
     },
-
- errorPlugin: {
+     errorPlugin: {
      timeToExpires: 2,
-    onRetry: function(e) {
+     onRetry: function(e) {
       player.configure({
         source: sv,
         autoPlay: true,
