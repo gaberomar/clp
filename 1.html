@@ -29,17 +29,17 @@ var sv = getParam("sv");
    var player = new Clappr.Player({
     source: sv,
     parentId: "#player",
-    width:"100%",height:"100%",
-    plugins: [LevelSelector, ErrorPlugin, HlsjsPlayback, Clappr.FlasHLS],  
-    mute: false,
-    autoPlay: true,
-    hideVolumeBar: true,
-     mediacontrol: {
+	  mediacontrol: {
              seekbar: "#f98a00",
              buttons: "#f98a00"
                },    
     position: "bottom-left",
-    watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png",
+    watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png",   
+    plugins: [LevelSelector, ErrorPlugin, HlsjsPlayback, Clappr.FlasHLS], 
+    width:"100%",height:"100%",   
+    mute: false,
+    autoPlay: true,
+    hideVolumeBar: true,
     errorPlugin: {
     timeToExpires: 2,
     onRetry: function(e) {
