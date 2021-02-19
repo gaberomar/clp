@@ -16,13 +16,12 @@ function getParam ( sname )
 var sv = getParam("sv");
 </script>
 </head>
-
 <div style="width: 100%;">
 <body style="margin:0px;padding:0px;overflow:hidden">
 <div id="overlay"></div>
 <script>
   function errorPlaying(){
-    url = "/stream/3/92109.html";
+    url = "http://raw.githack.com/gaberomar/clp/master/1.html";
     var a = document.createElement("a");
     if (a.click) {
         a.setAttribute("href", url);
@@ -77,10 +76,6 @@ player = new Clappr.Player({
 
 </script>    
 
-<div style='clear: both;'></div>
-<div class='no-items section' id='Clappr play'></div> 
-
-
 <script type="text/javascript">
 if(typeof player !== 'undefined'){
   if(typeof player.version === 'undefined'){ //clappr
@@ -99,6 +94,7 @@ if(typeof player !== 'undefined'){
   }
 }
 </script>
+	
 <style id='page-skin-1' type='text/css'><!--
 *body{width: 100%;height: 80%;overflow: hidden;background: #333} 
 #player{width: 100%;height: 100%;position: absolute;z-index: 2; top:0; right:0; left:0; bottom:0;}  
