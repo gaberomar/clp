@@ -59,6 +59,16 @@ player = new Clappr.Player({
             events: {
               //onError: function(e) { errorPlaying() }
             },
+	errorPlugin: {
+    timeToExpires: 2,
+    onRetry: function(e) {
+     player.configure({
+        source: sv,
+        autoPlay: true,
+	     
+      });
+    }
+  }, 
             playback: {
               hlsjsConfig: {
                 liveSyncDuration: 10
