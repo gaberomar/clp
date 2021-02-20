@@ -35,7 +35,6 @@ var sv = getParam("sv");
 
   }
 
-
 </script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
@@ -59,6 +58,11 @@ player = new Clappr.Player({
             events: {
               //onError: function(e) { errorPlaying() }
             },
+            playback: {
+              hlsjsConfig: {
+                liveSyncDuration: 10
+            }
+         },  
 	errorPlugin: {
     timeToExpires: 2,
     onRetry: function(e) {
@@ -69,11 +73,6 @@ player = new Clappr.Player({
       });
     }
   }, 
-            playback: {
-              hlsjsConfig: {
-                liveSyncDuration: 10
-            }
-         } 
 });
 
  player.on(Clappr.Events.PLAYER_STOP, playerStop);
@@ -228,7 +227,5 @@ textarea {
 }
 /* ]]> */
 </style>
-
-
 </body>
 </html>
