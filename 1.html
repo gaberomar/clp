@@ -42,44 +42,46 @@ var sv = getParam("sv");
 player = new Clappr.Player({
             source: sv,
             mimeType: "application/x-mpegURL",
+	    parentId: "#vid",
             autoPlay: true, 
-            mute: false,           
+            mute: false, 
+	    hideVolumeBar: true, 
             height: '100%',
             width: '100%',
             position: "bottom-left",   
-    watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 
+            watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 
             plugins: [LevelSelector, ErrorPlugin, Clappr.FlasHLS], 
-            parentId: "#vid",
-            hideVolumeBar: true,
+            playback: {
+            playInline: true,
+            hlsjsConfig: {
+            liveSyncDuration: 5,
+                        }
+                     },
             events: {
               //onError: function(e) { errorPlaying() }
             },
-            playback: {
-              hlsjsConfig: {
-                liveSyncDuration: 5
-            }
-         },  
-	errorPlugin: {
-    timeToExpires: 2,
-    onRetry: function(e) {
-     player.configure({
-        source: sv,
-        autoPlay: true,
-	     
-      });
-    }
-  }, 
-});
+            errorPlugin: {
+            timeToExpires: 2,
+            onRetry: function(e) {
+            player.configure({
+            source: sv,     
+            autoPlay: true,   
+                 });
+                }
+               }, 
+            });
 
- player.on(Clappr.Events.PLAYER_STOP, playerStop);
+          player.on(Clappr.Events.PLAYER_STOP, playerStop);
                function playerStop(){
                location.reload();
                } 
 
-  player.setVolume(100); // 1%
+         player.setVolume(100); // 1%
                player.play();
-
-</script>    
+              } else {
+            document.write("Not supported :(");
+              }
+          </script>    
 <script>
   function errorPlaying(){
     url = "";
