@@ -35,7 +35,6 @@ var sv = getParam("sv");
 
 <script>
    
-	
     var r = 5; // Retry attempts
     var player = new Clappr.Player({
         source: sv, 
@@ -45,13 +44,7 @@ var sv = getParam("sv");
         autoPlay: "true",
         hideVolumeBar: true,
         watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", position: 'bottom-left',    
-        plugins: [LevelSelector, Clappr.FlasHLS],
-         playback: {
-            playInline: true,
-            hlsjsConfig: {
-            liveSyncDuration: 5,
-                        }
-                     }, 
+        plugins: [LevelSelector, Clappr.FlasHLS], 
             events: {
             onError: function(e) {
             r--;
