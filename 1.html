@@ -55,14 +55,14 @@ var sv = getParam("sv");
         events: {
             onError: function(e) {
             r--;
-            var s = player.options.source;
+            var sv = player.options.source;
             // Replace previous line by the following line to simulate successful recovery
-            // var s = (r > 2) ? player.options.source : 'http://clappr.io/highline.mp4';
+            // var sv = (r > 2) ? player.options.source : 'http://clappr.io/highline.mp4';
             var t = 5;
             var retry = function() {
                 if (t === 0) {
                 var o = player.options;
-                o.source = s;
+                o.source = sv;
                 player.configure(o);
                 return;
                 }
@@ -74,8 +74,8 @@ var sv = getParam("sv");
                 autoPlay: true,
                 source: 'playback.error',
                 playbackNotSupportedMessage: 'Lỗi mạng.' + ((r > 0)
-                    ? ' Video sẽ trở lại sau <span id="retryCounter"></span> giây ...'
-                    : ' Bạn hãy tải lại trang để tiếp tục xem'),
+                    ? ' كوره جي لايف <span id="retryCounter"></span>  ...'
+                    : ' http://www.koraglive.cf/),
             });
             if (r > 0) {
                 retry();
