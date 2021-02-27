@@ -47,7 +47,7 @@ var sv = getParam("sv");
         autoPlay: "true",
         hideVolumeBar: true,
         watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", position: 'bottom-left',    
-        plugins: [LevelSelector,ErrorPlugin, Clappr.FlasHLS],
+        plugins: [LevelSelector, ErrorPlugin, Clappr.FlasHLS],
          playback: {
             playInline: true,
             hlsjsConfig: {
@@ -75,8 +75,8 @@ var sv = getParam("sv");
             player.configure({
                 autoPlay: true,
                 source: 'playback.error',
-                playbackNotSupportedMessage: 'Lỗi mạng.' + ((r > 0)
-                    ? ' بث مباشر <span id="retryCounter"></span> ...'
+                playbackNotSupportedMessage: ' بث مباشر .' + ((r > 0)
+                    ? '   موقع : كوره جي لايف <span id="retryCounter"></span> ...'
                     : ' موقع : كوره جي لايف'),
             });
             if (r > 0) {
