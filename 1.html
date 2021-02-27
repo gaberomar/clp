@@ -48,14 +48,14 @@ var sv = getParam("sv");
             playback: {
             playInline: true,
             hlsjsConfig: {
-            liveSyncDuration: 5,
+            liveSyncDuration: 10,
                         }
                      },
             events: {
               //onError: function(e) { errorPlaying() }
             },
             errorPlugin: {
-            timeToExpires: 2,
+            timeToExpires: 1,
             onRetry: function(e) {
             player.configure({
             source: sv,     
