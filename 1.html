@@ -48,9 +48,9 @@ var sv = getParam("sv");
             events: {
             onError: function(e) {
             r--;
-            var s = player.options.source;
+            var sv = player.options.source;
             // Replace previous line by the following line to simulate successful recovery
-            // var s = (r > 2) ? player.options.source : 'http://clappr.io/highline.mp4';
+            // var sv = (r > 2) ? player.options.source : 'http://clappr.io/highline.mp4';
             var t = 5;
             var retry = function() {
                 if (t === 0) {
