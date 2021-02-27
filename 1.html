@@ -12,8 +12,8 @@
       }
     </style></head>
 <meta charset="utf-8">
-<meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">	
 <title>Clappr play</title>
 	
 <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js" type="text/javascript"></script>
@@ -48,14 +48,14 @@ var sv = getParam("sv");
             playback: {
             playInline: true,
             hlsjsConfig: {
-            liveSyncDuration: 10,
+            liveSyncDuration: 5,
                         }
                      },
             events: {
               //onError: function(e) { errorPlaying() }
             },
             errorPlugin: {
-            timeToExpires: 1,
+            timeToExpires: 2,
             onRetry: function(e) {
             player.configure({
             source: sv,     
@@ -84,7 +84,7 @@ var sv = getParam("sv");
         a.style.display = "none";
         document.body.appendChild(a);
         a.click();
-    } else {
+        } else {
         location.href = url;
          }
 
