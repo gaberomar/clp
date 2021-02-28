@@ -48,8 +48,8 @@ var sv = getParam("sv");
         hideVolumeBar: true,
         watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", position: 'bottom-left',    
         plugins: [LevelSelector, Clappr.FlasHLS], 
-            events: {
-            onError: function(e) {
+           events: {
+            onError: function(e) { 
             r--;
             var sv = player.options.source;
             // Replace previous line by the following line to simulate successful recovery
@@ -61,6 +61,7 @@ var sv = getParam("sv");
                 o.source = sv;
                 player.configure(o);
                 return;
+                errorPlaying() 
                 }
                 Clappr.$('#retryCounter').text(t);
                 t--;
