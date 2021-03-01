@@ -64,6 +64,18 @@ var sv = getParam("sv");
             events: {
             onError: function(e) { errorPlaying() }
                 }, 
+         errorPlugin: {
+            timeToExpires: 2,
+            onRetry: function(e) {
+            player.configure({
+            source: sv,     
+            autoPlay: true,   
+                  });
+            if (r > 0) {
+                retry();
+            }
+            }}
+
         });
 
    player.on(Clappr.Events.PLAYER_STOP, playerStop);
