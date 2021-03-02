@@ -62,19 +62,17 @@ var sv = getParam("sv");
                 retry();
             }
             }}
-            
           });
 
-                player.on(Clappr.Events.PLAYER_STOP, playerStop);
-                function playerStop(){
-                location.reload();
+ player.on(Clappr.Events.PLAYER_STOP, playerStop);
+ function playerStop(){
+ location.reload();
 
-                 }
+          }
 
-               player.setVolume(100); // 1%
-               player.play();
+ player.setVolume(100); // 1%
+ player.play();
               
-
 </script>
 
 <div style='clear: both;'></div>
