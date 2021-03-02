@@ -51,15 +51,7 @@ var sv = getParam("sv");
    events: {
    onError: function(e) { errorPlaying() }
            },
-   errorPlugin: {
-   timeToExpires: 2,
-   onRetry: function(e) {
-   player.configure({
-   source: sv,     
-   autoPlay: true,   
-            });
-          }
-        }
+  
        });
 
  player.on(Clappr.Events.PLAYER_STOP, playerStop);
@@ -72,7 +64,6 @@ var sv = getParam("sv");
  player.play();
               
  </script>
-
 <div style='clear: both;'></div>
  
 <style>
