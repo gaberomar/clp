@@ -47,33 +47,30 @@ var sv = getParam("sv");
    width: '100%', 
    position: "bottom-left",   
    watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 
-  plugins: [LevelSelector,  ErrorPlugin, Clappr.FlasHLS], 
+   plugins: [LevelSelector,  ErrorPlugin, Clappr.FlasHLS], 
    events: {
-            onError: function(e) { errorPlaying() }
-            },
+   onError: function(e) { errorPlaying() }
+           },
    errorPlugin: {
-            timeToExpires: 2,
-            onRetry: function(e) {
-            player.configure({
-            source: sv,     
-            autoPlay: true,   
-                  });
-            if (r > 0) {
-                retry();
-            }
-            }}
-          });
+   timeToExpires: 2,
+   onRetry: function(e) {
+   player.configure({
+   source: sv,     
+   autoPlay: true,   
+            });
+          }}
+       });
 
  player.on(Clappr.Events.PLAYER_STOP, playerStop);
  function playerStop(){
  location.reload();
 
-          }
+        }
 
  player.setVolume(100); // 1%
  player.play();
               
-</script>
+ </script>
 
 <div style='clear: both;'></div>
  
