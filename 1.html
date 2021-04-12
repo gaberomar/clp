@@ -57,8 +57,7 @@ var ErrorPlugin=Clappr.ContainerPlugin.extend({name:"error_plugin",background:"d
 
   var playerElement = document.getElementById("player");
    var player = new Clappr.Player({
-   source: sv,
-   plugins: [LevelSelector,  ErrorPlugin, Clappr.FlasHLS],  
+   source: sv, 
    autoPlay:true,  
    parentId: "#player",
    height: '100%',
@@ -66,18 +65,22 @@ var ErrorPlugin=Clappr.ContainerPlugin.extend({name:"error_plugin",background:"d
    hideVolumeBar: true,   
    position: "bottom-left",   
    watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 
+	 plugins: {
+	"core": [LevelSelector]
+	},    
            events: {
               onError: function(e) { errorPlaying() }
             },
 hlsjsConfig: {
-		xhrSetup: function(xhr, url) {
-			xhr.withCredentials = false;
-		}
+	 xhrSetup: function(xhr, url) {
+	  xhr.withCredentials = false;
+	 }
 	},
+	maxBufferLength: "20",
 	playbackConfig: {
 		crossorigin: 'use-credentials'
 	},
-	
+	  plugins: [ ErrorPlugin, Clappr.FlasHLS],
             });
 function plstst(){
 	var ua = navigator.userAgent.toLowerCase();
