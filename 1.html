@@ -65,12 +65,7 @@ var ErrorPlugin=Clappr.ContainerPlugin.extend({name:"error_plugin",background:"d
    hideVolumeBar: true,   
    position: "bottom-left",   
    watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 
-	 plugins: {
-	"core": [LevelSelector]
-	},    
-           events: {
-              onError: function(e) { errorPlaying() }
-            },
+	  plugins: {'core': [LevelSelector]},  
 hlsjsConfig: {
 	 xhrSetup: function(xhr, url) {
 	  xhr.withCredentials = false;
@@ -81,6 +76,9 @@ hlsjsConfig: {
 		crossorigin: 'use-credentials'
 	},
 	  plugins: [ ErrorPlugin, Clappr.FlasHLS],
+	    events: {
+              onError: function(e) { errorPlaying() }
+            },
             });
 function plstst(){
 	var ua = navigator.userAgent.toLowerCase();
