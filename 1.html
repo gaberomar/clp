@@ -1,6 +1,10 @@
 
 
  <html><head>
+<style id='page-skin-1' type='text/css'><!--
+*{margin:0; padding:0; }
+#player{width: 100vw; height: 100vh;}
+--></style> 
 <style> video {object-fit:fill}</style><style>html,body{margin:0;}</style>
 <style> .video-js {width: 100%; height: 100%;} #videojs {width: 100%; height: 100%;}</style></head>
 	<meta charset="utf-8">
@@ -34,8 +38,21 @@ var sv = getParam("sv");
 
 
 </script>
-<script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js" type="text/javascript"></script>
-<script src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
+
+<div class="jwplayer jw-reset jw-skin-glow player live" id="vid"></div>
+ <div id="overlay"></div>
+<script>var WSreloadCounter=false,WSnTries=0,videoStarted = false, startMuted = startMuted(),mPlayer = 1,manifestLoaded = false,WSref='9c7gsstqe6s7';function errorPlaying(){$(".stream-offline .counter").text(10);$(".stream-offline").css("display","table");if (!WSreloadCounter)WSreloadCounter=setInterval(function(){var a=$(".stream-offline .counter").text();if(a>1){a--;$(".stream-offline .counter").text(a)}else{ clearInterval(WSreloadCounter);WSreloadCounter=false;WSnTries++;if(WSnTries<10){WSreloadStream();}else{ window.location.reload() } }},1000)}function startMuted(){var b=/constructor/i.test(window.HTMLElement)||(function(c){return c.toString()==="[object SafariRemoteNotification]"})(!window.safari||(typeof safari!=="undefined"&&safari.pushNotification));if(b){return true}if(window.chrome&&getChromeVersion()>=66){return true}var ff = navigator.userAgent.match(/firefox\/([0-9]{2,})/i);if( ff && parseInt( ff[1] )>=66 ){return true}var a=(navigator.userAgent.match(/Opera|OPR\//)?true:false);if(a){return true}return false}function getChromeVersion(){var b=navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);return b?parseInt(b[2],10):false};function abd(){WSreloadStream=function(){return};if(player)player.stop();$("#player").remove();clearInterval(WSreloadCounter);$("body").html('<div class="tb stream-offline" style="display:table"><div class="tb-col"><a href="/" target="_blank"><img src="/imgs/icon.png" /></a><h2>SANDBOX IFRAME NOT ALLOWED</h2><div style="padding-top: 0.8em">WATCH ON THE FOLLOWING LINK:</div><input value="http://' + location.hostname + '/live/9c7gsstqe6s7" onclick="this.select()" type="text" style="width:280px;border:0;background:none;color:#12e5a8;margin-top:20px;font-size:15px;text-align:center;"/></div></div>') }</script>
+
+
+<div id="playerdiv" class="notloaded show-controls"></div>
+<div class="tb">
+<div class="tb-col">
+<a href="/" target="_blank"><img src="//espn.newdmn.icu/tele.png" alt="Telerium.tv"></a>
+<h2>Error</h2>
+<p>Unknown error</p>
+</div>
+</div>
+<style>.dvr-controls[data-dvr-controls] .live-info::before, .bar-fill-2{ background-color:#000000 !important; }</style>
 <script type="text/javascript">
 function getParam ( sname )
 {
@@ -45,82 +62,102 @@ function getParam ( sname )
 }
 var sv = getParam("sv");
 </script>
+<div class="container">
+<div id="vid" class="embed-responsive-item"></div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
+<div id="vid" class="embed-responsive-item"></div>
 
-<div style="width: 100%;">
-<body style="margin:0px;padding:0px;overflow:hidden">
-
- <div class="container">
-<div id="player" class="embed-responsive-item"></div>
-<script>
-
-  var playerElement = document.getElementById("player");
-   var player = new Clappr.Player({
-   source: sv, 
-   autoPlay:true,  
-   parentId: "#player",
-   height: '100%',
-   width: '100%', 
-   hideVolumeBar: true,   
-   position: "bottom-left",   
-   watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 
-	  plugins: {'core': [LevelSelector]},  
-hlsjsConfig: {
-	 xhrSetup: function(xhr, url) {
-	  xhr.withCredentials = false;
-	 }
-	},
-	maxBufferLength: "20",
-	playbackConfig: {
-		crossorigin: 'use-credentials'
-	},
-	    events: {
-              onError: function(e) { errorPlaying() }
+<script type="text/javascript">
+player = new Clappr.Player({
+            source: sv,
+            mimeType: "application/x-mpegURL",
+            autoPlay: true, 
+            mute: true, 
+           hideVolumeBar: true, 
+            height: '100%',
+            width: '100%',
+            plugins: {'core': [LevelSelector]},  
+            parentId: "#vid",
+            hideMediaControl: false,
+  watermark  : "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png",
+		    position  : "bottom-left",
+		  	watermarkLink: 'http://www.koraglive.cf/',
+			allowUserInteraction: false,
+			persistConfig: false,
+ 
+            events: {
+              onError: function(e) { 
+                setTimeout(function(){
+                  player.load(player.options.source);
+                  player.play();
+                },1000)
+              }
             },
-            });
-function plstst(){
-	var ua = navigator.userAgent.toLowerCase();
-	      
-if(ua.indexOf("iphone") != -1 || ua.indexOf("ipad") != -1){
-//player.pause ();	
-//player.getPlugin('poster').el.classList.add('psdrddd');
-}else {
-//player.pause ();
-player.core.mediaControl.toggleFullscreen();
-//player.getPlugin('poster').el.classList.add('psdrddd');
+            playback: {
+              hlsjsConfig: {
+                 liveSyncDuration: 10
+              }
+            } 
+});
 
-}
-}
-setTimeout(plstst, 39000);
-
-player.on(Clappr.Events.PLAYER_STOP, playerStop);
+  player.on(Clappr.Events.PLAYER_STOP, playerStop);
                function playerStop(){
                location.reload();
-               } 
-
-  player.setVolume(100); // 1%
-               player.play();
-       
-   
-    </script>
-
-<script>
-  function errorPlaying(){
-    url = "";
-    var a = document.createElement("a");
-    if (a.click) {
-        a.setAttribute("href", url);
-        a.setAttribute("target", "_self");
-        a.style.display = "none";
-        document.body.appendChild(a);
-        a.click();
-    } else {
-        location.href = url;
-    }
-
-  }
+                }
+    
+               player.setVolume(100); // 1%
+          
 
 </script>
-	
+<script type="text/javascript">
+if(typeof player !== 'undefined'){
+
+  if(typeof player.version === 'undefined'){ //clappr
+    player.on(Clappr.Events.PLAYER_VOLUMEUPDATE, function(volume){
+        setCookie("volume", volume, 365);
+    });
+  } else {
+    if(typeof player.unmute === 'undefined'){//jwplayer
+      player.on('volume', function(volume){
+        setCookie("volume", volume.volume, 365);
+      });
+    } else { //bitmovin
+      player.on(bitmovin.player.PlayerEvent.VolumeChanged, function(cfg){
+        setCookie("volume", cfg.targetVolume, 365);
+      });
+      player.on(bitmovin.player.PlayerEvent.Error, function(err){
+        errorPlaying();
+      });
+    }
+  }
+
+}
+</script>
+<script type="text/javascript">
+if(typeof player !== 'undefined'){
+
+  if(typeof player.version === 'undefined'){ //clappr
+    player.on(Clappr.Events.PLAYER_VOLUMEUPDATE, function(volume){
+        setCookie("volume", volume, 365);
+    });
+  } else {
+    if(typeof player.unmute === 'undefined'){//jwplayer
+      player.on('volume', function(volume){
+        setCookie("volume", volume.volume, 365);
+      });
+    } else { //bitmovin
+      player.on(bitmovin.player.PlayerEvent.VolumeChanged, function(cfg){
+        setCookie("volume", cfg.targetVolume, 365);
+      });
+      player.on(bitmovin.player.PlayerEvent.Error, function(err){
+        errorPlaying();
+      });
+    }
+  }
+
+}
+</script>
 <div style='clear: both;'></div>
 <div class='no-items section' id='Clappr play'></div> 
 
