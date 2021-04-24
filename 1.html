@@ -1,5 +1,6 @@
 
 
+
  <html><head>
 <style id='page-skin-1' type='text/css'><!--
 *{margin:0; padding:0; }
@@ -63,6 +64,7 @@ var sv = getParam("sv");
   var player = new Clappr.Player({
     source: sv,
     parentId: '#vid',
+    mimeType: "application/x-mpegURL",
     plugins: {
       core: [LevelSelector],
     },
@@ -75,8 +77,9 @@ var sv = getParam("sv");
     watermark  : "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png",
 		    position  : "bottom-left",
     poster: '',
-    watermarkLink:''
-	 events: {
+    watermarkLink:'',
+ 
+            events: {
               onError: function(e) { 
                 setTimeout(function(){
                   player.load(player.options.source);
@@ -88,9 +91,11 @@ var sv = getParam("sv");
               hlsjsConfig: {
                  liveSyncDuration: 10
               }
-            }   
+            } 
+           	
   });
-}
+  
+  }
   player.on(Clappr.Events.PLAYER_STOP, playerStop);
                function playerStop(){
                location.reload();
