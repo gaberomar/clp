@@ -1,5 +1,6 @@
 
 
+
  <html><head>
 <style id='page-skin-1' type='text/css'><!--
 *{margin:0; padding:0; }
@@ -52,60 +53,12 @@ function getParam ( sname )
 }
 var sv = getParam("sv");
 </script>
-<div class="container">
-<div id="vid" class="embed-responsive-item"></div>
 
 <script type="text/javascript" charset="utf-8" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
  <script type="text/javascript" charset="utf-8" src="https://cdn.jsdelivr.net/npm/level-selector@latest/dist/level-selector.min.js"></script>
- 	  
+ 	<div class="container">
 <div id="vid" class="embed-responsive-item"></div>
-	<style class="clappr-style">.Clappr-playback {
-  height: 100%;
-  width: 100%; }
-  .Clappr-playback .Clappr-playback-background, .Clappr-playback .Clappr-playback-overlay {
-    position: absolute;
-    height: 100%;
-    width: 100%; }
-  .Clappr-playback .Clappr-playback-background {
-    background-size: contain; }
-  .Clappr-playback .Clappr-playback-overlay {
-    background-color: #000;
-    opacity: 0.4; }
-
-.Clappr-button {
-  background: transparent;
-  border: 0;
-  width: 32px;
-  height: 32px;
-  font-size: 22px;
-  line-height: 32px;
-  letter-spacing: 0;
-  margin: 0 6px;
-  color: #fff;
-  opacity: 0.5;
-  vertical-align: middle;
-  text-align: left;
-  cursor: pointer;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-transition: all 0.1s ease;
-  -moz-transition: all 0.1s ease;
-  -o-transition: all 0.1s ease;
-  transition: all 0.1s ease; }
-  .Clappr-button:hover {
-    opacity: 0.75;
-    text-shadow: rgba(255, 255, 255, 0.8) 0 0 5px; }
-  .Clappr-button:focus {
-    outline: none; }
-  .Clappr-button svg {
-    width: 24px;
-    height: 24px; }
-    .Clappr-button svg #cast, .Clappr-button svg #cast-on, .Clappr-button svg #Path {
-      fill: #fff;
-      stroke: #fff;
-      stroke-width: 0.5px; }
-</style>
-
+  	
 <script type="text/javascript" charset="utf-8">
 player = new Clappr.Player({
 	   url:"https://live-sport24.com/onlineplayer.php?stream_id=2375546", 
@@ -115,7 +68,7 @@ player = new Clappr.Player({
             mimeType: "application/x-mpegURL",
             autoPlay: true, 
             mute: false, 
-            hideVolumeBar: true,
+             hideVolumeBar: true,
             height: '100%',
             width: '100%',
             plugins: {'core': [LevelSelector]},  
@@ -124,7 +77,11 @@ player = new Clappr.Player({
 		  	watermarkLink: 'http://www.koraglive.cf/',
 			allowUserInteraction: false,
 			persistConfig: false,
- 
+           playback: {
+              hlsjsConfig: {
+                 liveSyncDuration: 10
+              }
+             },
             events: {
               onError: function(e) { 
                 setTimeout(function(){
@@ -133,11 +90,7 @@ player = new Clappr.Player({
                 },1000)
               }
             },
-            playback: {
-              hlsjsConfig: {
-                 liveSyncDuration: 10
-              }
-            } 
+           
 });
 
   player.on(Clappr.Events.PLAYER_STOP, playerStop);
@@ -199,7 +152,54 @@ if(typeof player !== 'undefined'){
 </script>
 <div style='clear: both;'></div>
 <div class='no-items section' id='Clappr play'></div> 
-
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+.media-control.live[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar] .bar-background[data-seekbar] .bar-fill-2[data-seekbar]{background-color:#ff0101!important}
+.media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar] .bar-background[data-seekbar]{height:3px!important}
+.media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar] .bar-scrubber[data-seekbar] .bar-scrubber-icon[data-seekbar]{display:none!important}
+.dvr-controls[data-dvr-controls] .live-info{font-size:0;margin-left:85px}
+.dvr-controls[data-dvr-controls] .live-info:after{content:"Live";font-size:12px;font-weight:100;margin-left:5px}
+.media-control[data-media-control] .media-control-layer[data-controls] .drawer-container[data-volume]{float:left!important;position:absolute;left:60px;top:-6px}
+.media-control[data-media-control] .media-control-layer[data-controls] .media-control-right-panel[data-media-control]{position:initial!important;top:initial!important;right:initial!important;height:initial!important}
+.media-control[data-media-control] .media-control-layer[data-controls] button.media-control-button[data-fullscreen]{position:absolute;right:0;top:0}
+.level_selector[data-level-selector]{position:absolute!important;top:-2px!important;right:125px!important}
+.media-control[data-media-control] .media-control-layer[data-controls]{height:20px!important}
+.media-control[data-media-control] .media-control-layer[data-controls] button.media-control-button[data-hd-indicator]{background:url(https://3.bp.blogspot.com/-DufHB9HGWkA/W_btZgp8TVI/AAAAAAAALrQ/JCwzpk485fIBY8QNjCI9LcjJC4ofexoYgCLcBGAs/s1600/youtube.png) center center/100% no-repeat;width:55px;display:block!important;opacity:inherit;position:absolute;right:50px;top:2px;background-size:100% 100%;height:17px!important}
+.media-control[data-media-control] .media-control-layer[data-controls] button.media-control-button[data-hd-indicator] svg{opacity:0}
+.level_selector[data-level-selector] button{font-size:0!important;background:url(https://3.bp.blogspot.com/-zetFuQ36xLo/W_brDTdM6yI/AAAAAAAALrE/ETrOqtTKj3ozXXIBbj_zwaiTNzpd1hn0ACLcBGAs/s1600/settings.png) center center/100% no-repeat;display:block!important;opacity:inherit;width:17px;height:17px;cursor:pointer}
+.media-control[data-media-control]{display:block!important}
+.media-control[data-media-control] .media-control-icon{opacity:1!important}
+.media-control[data-media-control] .media-control-layer[data-controls] button.media-control-button svg path{fill:#fff!important}
+button.media-control-button.media-control-icon.stopped svg{height:16px!important;margin-top:4px}
+.dvr-controls[data-dvr-controls]{line-height:19px!important}
+.media-control[data-media-control] .media-control-layer[data-controls] .drawer-container[data-volume] .drawer-icon-container[data-volume] .drawer-icon[data-volume] svg{background:url(https://2.bp.blogspot.com/-u2_Nt6rchF4/W_b0u__k7VI/AAAAAAAALrc/NOkDQStsZb8eYiGOvrBcmLg4BThm38XkwCLcBGAs/s1600/reduced-volume.png) center center/100% no-repeat;width:16px;position:absolute!important;top:8px!important;background-size:100% 100%;height:14px!important;opacity:4}
+.media-control[data-media-control] .media-control-layer[data-controls] .drawer-container[data-volume] .drawer-icon-container[data-volume] .drawer-icon[data-volume]{opacity:1!important}
+.media-control[data-media-control] .media-control-layer[data-controls] .drawer-container[data-volume] .drawer-icon-container[data-volume] .drawer-icon[data-volume] svg path{opacity:0}
+.media-control[data-media-control] .media-control-layer[data-controls] .drawer-container[data-volume] .drawer-icon-container[data-volume] .drawer-icon[data-volume].muted svg{background:url(https://1.bp.blogspot.com/-3ktSarGTAPs/W_b27RSZJrI/AAAAAAAALro/ClQo6SXU0dIt0FmYlU2IvBeTOW1pzEZHQCLcBGAs/s1600/volume-off-indicator.png) center center/100% no-repeat}
+.media-control[data-media-control] .media-control-layer[data-controls] .drawer-container[data-volume] .bar-container[data-volume] .segmented-bar-element[data-volume]:hover{transform:scaleY(1)!important}
+.media-control[data-media-control] .media-control-layer[data-controls] .drawer-container[data-volume] .bar-container[data-volume] .segmented-bar-element[data-volume]{padding-left:0!important;height:3px!important;background-color:#fff;box-shadow:rgb(255,255,255) 2px 0 0 inset!important}
+.media-control[data-media-control] .media-control-layer[data-controls] .drawer-container[data-volume] .bar-container[data-volume]{top:11px!important;left:-5px}
+.media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar] .bar-background[data-seekbar] .bar-fill-1[data-seekbar]{width:100%!important;right:10px}
+.media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar] .bar-background[data-seekbar]{width:initial!important;margin-right:10px;margin-left:10px}
+.media-control[data-media-control] .media-control-layer[data-controls] .media-control-left-panel[data-media-control]{left:10px!important}
+.media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar]{top:-22px!important}
+.media-control[data-media-control] .media-control-layer[data-controls] .media-control-indicator[data-position]{margin:0 7px 0 90px!important}
+.media-control[data-media-control] .media-control-layer[data-controls] .media-control-indicator[data-duration],.media-control[data-media-control] .media-control-layer[data-controls] .media-control-indicator[data-position]{font-size:14px!important;margin-top:-6px!important}
+.media-control[data-media-control] .media-control-layer[data-controls] button.media-control-button svg{height:18px!important;margin-top:0!important}
+.media-control[data-media-control] .media-control-layer[data-controls] button.media-control-button[data-fullscreen]{background:url(https://3.bp.blogspot.com/-SeTV9Zz6AYk/W_cOg19RtXI/AAAAAAAALsA/f4YIrvL5vCgj3lszpHTM4CZ2i5eebI0FgCLcBGAs/s1600/compress.png) center center/100% no-repeat;width:19px;position:absolute;right:15px;top:0;background-size:100% 100%}
+.media-control[data-media-control] .media-control-layer[data-controls] button.media-control-button[data-fullscreen] svg{opacity:0!important}
+.level_selector[data-level-selector]>ul{bottom:38px!important;border:0!important;background:rgba(28,28,28,0.9)!important;border-radius:2px}
+.level_selector[data-level-selector] li a{color:#fff!important;padding:9px 45px 9px 10px!important;float:left;width:100%;text-align:left;letter-spacing:2px;font-size:13px}
+.level_selector[data-level-selector] li a:hover{background-color:#313131!important}
+.level_selector[data-level-selector] li.current a{color:#fff!important}
+.level_selector[data-level-selector] li.current a:before{content:'\f00c';font-family:FontAwesome;position:absolute;right:11px}
+.level_selector[data-level-selector] li:nth-child(1) a{font-size:0}
+.level_selector[data-level-selector] li:nth-child(1) a:before{content:'Auto';font-size:13px}
+.spinner-three-bounce[data-spinner]>div{display:none!important}
+</style>
 <style>
 /* <![CDATA[ */
 
