@@ -3,7 +3,7 @@
  <html><head>
 <style> video {object-fit:fill}</style><style>html,body{margin:0;}</style>
 <style> .video-js {width: 100%; height: 100%;} #videojs {width: 100%; height: 100%;}</style>
-	<script type="284f1f4c205e0a4bf799891f-text/javascript">
+	<script type="text/javascript">
 function getParam ( sname )
 {
   var params = location.search.substr(location.search.indexOf("?")+1);
@@ -17,11 +17,11 @@ var sv = getParam("sv");
   <title>Bein Sport </title>
   <meta charset="UTF-8">
   <meta http-equiv="X-Frame-Options" content="deny">
-<script src='https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js' type="284f1f4c205e0a4bf799891f-text/javascript"></script>
-<script src='https://cdn.jsdelivr.net/npm/level-selector@latest/dist/level-selector.min.js' type="284f1f4c205e0a4bf799891f-text/javascript"></script>
-<div class="container">
+<script type="text/javascript" charset="utf-8" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
+	 <div class="container">
 <div id="vid" class="embed-responsive-item"></div> 	
-<script type="284f1f4c205e0a4bf799891f-text/javascript">
+<script type="text/javascript">
 player = new Clappr.Player({
 	   url:"https://live-sport24.com/onlineplayer.php?stream_id=2375546", 
 	   embed:"https://live-sport24.com/onlineplayer.php?stream_id=2375546",
@@ -64,33 +64,7 @@ player = new Clappr.Player({
           
 
 </script>
-<script type="284f1f4c205e0a4bf799891f-text/javascript">
-if(typeof player !== 'undefined'){
 
-  if(typeof player.version === 'undefined'){ //clappr
-    player.on(Clappr.Events.PLAYER_VOLUMEUPDATE, function(volume){
-        setCookie("volume", volume, 365);
-    });
-  } else {
-    if(typeof player.unmute === 'undefined'){//jwplayer
-      player.on('volume', function(volume){
-        setCookie("volume", volume.volume, 365);
-      });
-    } else { //bitmovin
-      player.on(bitmovin.player.PlayerEvent.VolumeChanged, function(cfg){
-        setCookie("volume", cfg.targetVolume, 365);
-      });
-      player.on(bitmovin.player.PlayerEvent.Error, function(err){
-        errorPlaying();
-      });
-    }
-  }
-
-}
-</script>
-
-<div style='clear: both;'></div>
-<div class='no-items section' id='Clappr play'></div> 
 <style>
 * {
   margin: 0;
@@ -239,7 +213,6 @@ textarea {
 /* ]]> */
 </style>
 
-<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="284f1f4c205e0a4bf799891f-|49" defer=""></script>
 </body>
 </html>
 
