@@ -100,9 +100,9 @@ var sv = getParam("sv");
   height:"100%", 
   stretching:"uniform", 
   mimeType:"application/x-mpegURL", 
-    hideVolumeBar: true, 
-   mediacontrol: {seekbar: "#0000ff", buttons: "rgb(0,0,255)"},
-             watermark  : "http://2.bp.blogspot.com/-OCYZC7_td70/YJbxdPLFWVI/AAAAAAAAM9E/2_ir6ToDvZk8PQQCScScUf1Ic5QVeQT7ACK4BGAYYCw/s1600/lg2.png",
+  hideVolumeBar: true, 
+  mediacontrol: {seekbar: "#FF00FF", buttons: "rgb(255,0,255)"}, 
+  watermark  : "http://2.bp.blogspot.com/-OCYZC7_td70/YJbxdPLFWVI/AAAAAAAAM9E/2_ir6ToDvZk8PQQCScScUf1Ic5QVeQT7ACK4BGAYYCw/s1600/lg2.png",
             position  : "bottom-left",
   plugins:
   {"core":[LevelSelector]},events:{onError:function(e){playError()},onReady:function(e){if(this.getVolume()==0){unmuteBtn.style.display="block"}},onVolumeUpdate:function(e){if(this.getVolume()>0){unmuteBtn.style.display="none"}else{unmuteBtn.style.display="block"}}},});
