@@ -1,6 +1,7 @@
 
 
-<html><head>    
+<HTML dir='ltr' lang='ar-eg' xml:lang='ar-eg' xmlns='http://www.w3.org/1999/xhtml'>
+ <head> 	 
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="referrer" content="no-referrer" />
@@ -192,6 +193,10 @@ button.media-control-button.media-control-icon.stopped svg{height:16px!important
 }
 /* ]]> */
 </style>
+	<script>/* <![CDATA[ */
+$(function(){var $allVideos=$(&quot;.responsive-content iframe, .responsive-content object, .responsive-content embed&quot;);$allVideos.each(function(){$(this).attr(&#39;data-aspectRatio&#39;,this.height / this.width).removeAttr(&#39;height&#39;).removeAttr(&#39;width&#39;);});$(window).resize(function(){$allVideos.each(function(){var newWidth=$(this).closest(&#39;.responsive-content&#39;).width();var $el=$(this);$el.width(newWidth).height(newWidth*$el.attr(&#39;data-aspectRatio&#39;));});}).resize();$(window).load(function(){$allVideos.each(function(){var newWidth=$(this).closest(&#39;.responsive-content&#39;).width();var $el=$(this);$el.width(newWidth).height(newWidth*$el.attr(&#39;data-aspectRatio&#39;));});}).resize();});
+//]]>
+</script> 
 </body>
-</html>
+</HTML>
 
