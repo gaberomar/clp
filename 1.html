@@ -51,11 +51,11 @@ var sv = getParam("sv");
   height:"100%", 
   stretching:"uniform", 
   mimeType:"application/x-mpegURL", 
-   hideVolumeBar: true, 
- mediacontrol: {seekbar: "#FF00FF", buttons: "rgb(255,0,255)"}, 
-    watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png",
-            position  : "bottom-left",
-  plugins: [LevelSelector,  Clappr.FlasHLS],events:{onError:function(e){playError()},onReady:function(e){if(this.getVolume()==0){unmuteBtn.style.display="block"}},onVolumeUpdate:function(e){if(this.getVolume()>0){unmuteBtn.style.display="none"}else{unmuteBtn.style.display="block"}}},});
+  hideVolumeBar: true, 
+  mediacontrol: {seekbar: "#FF00FF", buttons: "rgb(255,0,255)"}, 
+  watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", position : "bottom-left",       
+  plugins: {'core': [LevelSelector]},
+  plugins: [Clappr.FlasHLS], events:{onError:function(e){playError()},onReady:function(e){if(this.getVolume()==0){unmuteBtn.style.display="block"}},onVolumeUpdate:function(e){if(this.getVolume()>0){unmuteBtn.style.display="none"}else{unmuteBtn.style.display="block"}}},});
   function playError(){var delay=initialDelay;clearInterval(timer);timer=setInterval(function(){var messageElement=document.getElementById("error-message");delay-=1;if(delay){messageElement.querySelector("span").innerHTML=delay;messageElement.style.display="block"}else{clearInterval(timer);messageElement.style.display="none";
   player.stop();player.play()}},1000)}unmuteBtn.addEventListener("click",function(){player.unmute()});function startMuted(){var d=/constructor/i.test(window.HTMLElement)||(function(a){return a.toString()==="[object SafariRemoteNotification]"})(!window.safari||(typeof safari!=="undefined"&&safari.pushNotification));if(d){return true}
   var c=!!window.chrome&&!!window.chrome.webstore;if(c&&getChromeVersion()>=66){return true}return false}function getChromeVersion(){var a=navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);return a?parseInt(a[2],10):false};</script>
