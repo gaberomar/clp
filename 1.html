@@ -56,19 +56,7 @@ var sv = getParam("sv");
   function playError(){var delay=initialDelay;clearInterval(timer);timer=setInterval(function(){var messageElement=document.getElementById("error-message");delay-=1;if(delay){messageElement.querySelector("span").innerHTML=delay;messageElement.style.display="block"}else{clearInterval(timer);messageElement.style.display="none";
   player.stop();player.play()}},1000)}unmuteBtn.addEventListener("click",function(){player.unmute()});function startMuted(){var d=/constructor/i.test(window.HTMLElement)||(function(a){return a.toString()==="[object SafariRemoteNotification]"})(!window.safari||(typeof safari!=="undefined"&&safari.pushNotification));if(d){return true}
   var c=!!window.chrome&&!!window.chrome.webstore;if(c&&getChromeVersion()>=66){return true}return false}function getChromeVersion(){var a=navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);return a?parseInt(a[2],10):false};</script>
-  <script>
-if(Hls.isSupported()) {
-    var HLSVideo = document.querySelector(&quot;#HLSPlayer&quot;);
-    HLSVideo.volume = 1;
-    var hls = new Hls();
-    var m3u8Url = decodeURIComponent(VURL)
-    hls.loadSource(m3u8Url);
-    hls.attachMedia(HLSVideo);
-    hls.on(Hls.Events.MANIFEST_PARSED,function() {
-      HLSVideo.play();
-    });
-  }
-</script>
+ 
 <style>
 /* <![CDATA[ */
 
