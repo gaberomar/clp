@@ -2,6 +2,7 @@
 
 
 
+
 		    
 								
 <style> .video-js {width: 100%; height: 100%;} #videojs {width: 100%; height: 100%;}</style>	
@@ -17,7 +18,8 @@ function getParam ( sname )
 var sv = getParam("sv");
 
 </script>
-<link href="https://easysite.one/z/Css/LayoutDefaul.css" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="https://easysite.one/z/Css/LayoutDefaul.css" type="text/css" media="screen" charset="utf-8">
+
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
@@ -25,13 +27,13 @@ var sv = getParam("sv");
 <meta http-equiv="Pragma" content="no-cache" /> 
 <meta http-equiv="Cache-Control" content="no-cache"/>
 </head>
-
 <script type="bdb38791070e20a1557590ca-text/javascript" src="https://easysite.one/z/js/player/clapper/RaiPremium/jquery.min.js"></script>
 <script type="bdb38791070e20a1557590ca-text/javascript" src="https://easysite.one/z/js/player/clapper/RaiPremium/clappr.min.js"></script>
 <script type="bdb38791070e20a1557590ca-text/javascript" src="https://easysite.one/z/js/player/clapper/RaiPremium/level-selector.min.js"></script>
 <link href="https://easysite.one/z/js/player/clapper/RaiPremium/clappr.css" rel="stylesheet" type="text/css" media="screen">
 
 </head>
+
 <body>
 
   <body style="margin: 0px; padding: 0px">
@@ -39,6 +41,8 @@ var sv = getParam("sv");
   <div id="adcode"></div>
    <div id="unmute">تشغيل الصوت</div>
   <div id="Player"></div>
+
+
   <div id="error-message"><h2>STREAM IS OFFLINE</h2><p>Retrying in <span>10</span> Secondi ...</p><a href="/" target="_blank"><img src="https://lh3.googleusercontent.com/-KvhNPHP1Mus/YKIAwFkDn6I/AAAAAAAAM94/l3RcFBVGCSYiY80fy7DZSC8Du8knZVoCgCLcBGAsYHQ/s300-w300/koragtv.png" /></a></div>
  <script type="bdb38791070e20a1557590ca-text/javascript">var player,initialDelay=11,timer,unmuteBtn=document.getElementById("unmute");
   player=new Clappr.Player
@@ -217,7 +221,7 @@ $(".flowplayer").mouseenter(function(){
 $(function(){var $allVideos=$(&quot;.responsive-content iframe, .responsive-content object, .responsive-content embed&quot;);$allVideos.each(function(){$(this).attr(&#39;data-aspectRatio&#39;,this.height / this.width).removeAttr(&#39;height&#39;).removeAttr(&#39;width&#39;);});$(window).resize(function(){$allVideos.each(function(){var newWidth=$(this).closest(&#39;.responsive-content&#39;).width();var $el=$(this);$el.width(newWidth).height(newWidth*$el.attr(&#39;data-aspectRatio&#39;));});}).resize();$(window).load(function(){$allVideos.each(function(){var newWidth=$(this).closest(&#39;.responsive-content&#39;).width();var $el=$(this);$el.width(newWidth).height(newWidth*$el.attr(&#39;data-aspectRatio&#39;));});}).resize();});
 //]]>
 </script> 
-	 <script type="bdb38791070e20a1557590ca-text/javascript">
+<script type="bdb38791070e20a1557590ca-text/javascript">
 //<![CDATA[
 function play(link){if(link.indexOf('.html')!=-1){var xmlhttp=new XMLHttpRequest();xmlhttp.open("GET",link,!1);xmlhttp.send();src=xmlhttp.responseText}else src=link;player=videojs("restre");player.ready(function(){player.src({src:src,type:"application/x-mpegURL"})});player.play()}
  function reload(i){if(player.paused()&&player.error_!=null){if(i<link.length){play(link[i])}else{clearInterval(interval);document.write
@@ -229,4 +233,3 @@ function play(link){if(link.indexOf('.html')!=-1){var xmlhttp=new XMLHttpRequest
 </body>
 
  
-
