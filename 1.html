@@ -213,10 +213,7 @@ $(".flowplayer").mouseenter(function(){
 
 
 </script> 
-	<script type="bdb38791070e20a1557590ca-text/javascript">/* <![CDATA[ */
-$(function(){var $allVideos=$(&quot;.responsive-content iframe, .responsive-content object, .responsive-content embed&quot;);$allVideos.each(function(){$(this).attr(&#39;data-aspectRatio&#39;,this.height / this.width).removeAttr(&#39;height&#39;).removeAttr(&#39;width&#39;);});$(window).resize(function(){$allVideos.each(function(){var newWidth=$(this).closest(&#39;.responsive-content&#39;).width();var $el=$(this);$el.width(newWidth).height(newWidth*$el.attr(&#39;data-aspectRatio&#39;));});}).resize();$(window).load(function(){$allVideos.each(function(){var newWidth=$(this).closest(&#39;.responsive-content&#39;).width();var $el=$(this);$el.width(newWidth).height(newWidth*$el.attr(&#39;data-aspectRatio&#39;));});}).resize();});
-//]]>
-</script> 
+	
 <script type="bdb38791070e20a1557590ca-text/javascript">
 //<![CDATA[
 function play(link){if(link.indexOf('.html')!=-1){var xmlhttp=new XMLHttpRequest();xmlhttp.open("GET",link,!1);xmlhttp.send();src=xmlhttp.responseText}else src=link;player=videojs("restre");player.ready(function(){player.src({src:src,type:"application/x-mpegURL"})});player.play()}
