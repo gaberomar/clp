@@ -1,9 +1,4 @@
 
-
-
-
-
-
 <script type="bdb38791070e20a1557590ca-text/javascript">
 function getParam ( sname )
 {
@@ -30,7 +25,6 @@ a:hover{color:green}
 </style>	    
 <style> .video-js {width: 100%; height: 100%;} #videojs {width: 100%; height: 100%;}</style>								
 <style> video {object-fit:fill}</style><style>html,body{margin:0;}</style>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
 <meta http-equiv="Expires" content="0" /> 
@@ -48,8 +42,8 @@ a:hover{color:green}
 <!--[if lt IE 9]>
 <script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
-
-<script type="bdb38791070e20a1557590ca-text/javascript" src="https://easysite.one/z/js/player/clapper/RaiPremium/jquery.min.js"></script>
+<meta name="referrer" content="none">
+<script type="bdb38791070e20a1557590ca-text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script type="bdb38791070e20a1557590ca-text/javascript" src="https://easysite.one/z/js/player/clapper/RaiPremium/clappr.min.js"></script>
 <script type="bdb38791070e20a1557590ca-text/javascript" src="https://easysite.one/z/js/player/clapper/RaiPremium/level-selector.min.js"></script>
 
@@ -72,14 +66,34 @@ html{font-family:Verdana,Arial,Helvetica,sans-serif}
 #unmute:hover{opacity:1}</style>
 
 </head>
-<body>
-	
-  <body style="margin: 0px; padding: 0px">
+
+
+<body style="margin:0px;padding:0px;overflow:hidden">
+<div id="overlay"></div>
+<script type="bdb38791070e20a1557590ca-text/javascript">
+  function errorPlaying(){
+    url = "";
+    var a = document.createElement("a");
+    if (a.click) {
+        a.setAttribute("href", url);
+        a.setAttribute("target", "_self");
+        a.style.display = "none";
+        document.body.appendChild(a);
+        a.click();
+    } else {
+        location.href = url;
+    }
+
+  }
+
+
+</script>
+
+
   <div style="position:relative"></div>
   <div id="adcode"></div>
    <div id="unmute">تشغيل الصوت</div>
-  <div id="Player"></div>
-
+<div id="Player" class="embed-responsive-item"></div>
   <div id="error-message"><h2>koraglive</h2><p>Retrying in <span>10</span> Secondi ...</p><a href="/" target="_blank"><img src="https://lh3.googleusercontent.com/-4n5xlmjcKOw/YL-xQYxJVOI/AAAAAAAAM_A/8FTBsUqUmHw408zfyoAL-7udu_YItb8JgCLcBGAsYHQ/s300-rw-e90-w300/play.png" /></a></div>
 <script type="bdb38791070e20a1557590ca-text/javascript">var player,initialDelay=11,timer,unmuteBtn=document.getElementById("unmute");
   player=new Clappr.Player
@@ -99,6 +113,19 @@ html{font-family:Verdana,Arial,Helvetica,sans-serif}
   player.stop();player.play()}},1000)}unmuteBtn.addEventListener("click",function(){player.unmute()});function startMuted(){var d=/constructor/i.test(window.HTMLElement)||(function(a){return a.toString()==="[object SafariRemoteNotification]"})(!window.safari||(typeof safari!=="undefined"&&safari.pushNotification));if(d){return true}
   var c=!!window.chrome&&!!window.chrome.webstore;if(c&&getChromeVersion()>=66){return true}return false}function getChromeVersion(){var a=navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);return a?parseInt(a[2],10):false};</script>
   <script>
+if(Hls.isSupported()) {
+    var HLSVideo = document.querySelector(&quot;#HLSPlayer&quot;);
+    HLSVideo.volume = 1;
+    var hls = new Hls();
+    var m3u8Url = decodeURIComponent(VURL)
+    hls.loadSource(m3u8Url);
+    hls.attachMedia(HLSVideo);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      HLSVideo.play();
+    });
+  }
+</script>
+<script>
 if(Hls.isSupported()) {
     var HLSVideo = document.querySelector(&quot;#HLSPlayer&quot;);
     HLSVideo.volume = 1;
@@ -261,17 +288,4 @@ function play(link){if(link.indexOf('.html')!=-1){var xmlhttp=new XMLHttpRequest
  function reload(i){if(player.paused()&&player.error_!=null){if(i<link.length){play(link[i])}else{clearInterval(interval);document.write
 //]]>
 </script>
-	<script type="bdb38791070e20a1557590ca-text/javascript">var _Hasync= _Hasync|| [];
-_Hasync.push(['Histats.start', '1,2633223,4,514,95,18,00010000']);
-_Hasync.push(['Histats.fasi', '1']);
-_Hasync.push(['Histats.track_hits', '']);
-(function() {
-var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-hs.src = ('//s10.histats.com/js15_as.js');
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-})();</script>
 <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="bdb38791070e20a1557590ca-|49" defer=""></script> 
-
-</body>
-
- 
