@@ -20,7 +20,9 @@ function getParam ( sname )
 var sv = getParam("sv");
 
 </script>
-  	
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
 <style>
 body{margin:0px; background-color:#000; max-width:1980px}
 body, td, th{font-size:9pt; font-family:Verdana,Arial,Helvetica,sans-serif; color:#fff}
@@ -46,10 +48,8 @@ if(ac){if(/\?/.test(ac)){ac=ac.split("?")[1]}if(ad==null){return N(ac)}var ab=ac
 <script type="bdb38791070e20a1557590ca-text/javascript" src="https://easysite.one/z/js/player/clapper/RaiPremium/jquery.min.js"></script>
 <script type="bdb38791070e20a1557590ca-text/javascript" src="https://easysite.one/z/js/player/clapper/RaiPremium/clappr.min.js"></script>
 <script type="bdb38791070e20a1557590ca-text/javascript" src="https://easysite.one/z/js/player/clapper/RaiPremium/level-selector.min.js"></script>
-  <script>if (window.LevelSelector)LevelSelector.showStats();</script>
+<script>if (window.LevelSelector)LevelSelector.showStats();</script>
 	
-
-  
 <style>
 body, html{margin:0; padding:0; width:100%; height:100%}
 html{font-family:Verdana,Arial,Helvetica,sans-serif}
@@ -63,15 +63,13 @@ html{font-family:Verdana,Arial,Helvetica,sans-serif}
 #unmute{display:none; z-index:2147483647;  color:#fff;  position: absolute;  bottom:60px;  right:40px;  width:100px;  border:2px solid #fff;  text-align: center;  padding:4px 0;  border-radius:2px;  cursor: pointer; opacity:0.8}
 #unmute:hover{opacity:1}</style>
 </head>
-
 <body>
   
 <div style="position:relative"></div>
   <div id="adcode"></div>
    <div id="unmute">تشغيل الصوت</div>
  <div id="player"></div>
-
-  <div id="error-message"><h2>koraglive</h2><p>Retrying in <span>10</span> Secondi ...</p><a href="/" target="_blank"><img src="https://lh3.googleusercontent.com/-4n5xlmjcKOw/YL-xQYxJVOI/AAAAAAAAM_A/8FTBsUqUmHw408zfyoAL-7udu_YItb8JgCLcBGAsYHQ/s300-rw-e90-w300/play.png" /></a></div>
+<div id="error-message"><h2>koraglive</h2><p>Retrying in <span>10</span> Secondi ...</p><a href="/" target="_blank"><img src="https://lh3.googleusercontent.com/-4n5xlmjcKOw/YL-xQYxJVOI/AAAAAAAAM_A/8FTBsUqUmHw408zfyoAL-7udu_YItb8JgCLcBGAsYHQ/s300-rw-e90-w300/play.png" /></a></div>
 <script type="bdb38791070e20a1557590ca-text/javascript">
 var player,initialDelay=11,timer,unmuteBtn=document.getElementById("unmute");
 var qqnn = "aHR0cHM6Ly9obHMtNDQuaGVyb2t1YXBwLmNvbS9odHRwczovL3ZpZGVvLXdlYXZlci5mcmEwMi5obHMudHR2bncubmV0L3YxL3BsYXlsaXN0L0NySUNuWXd5c1d3TXBXcTVQMVVLdVprZHZJemlhTXFSQ0R3UWk0Q3VTcHp2MnNwRzFLOV9HaHRKNW9QLTlwX3J0aXBPTmExclNHSUJBZUJnUDhxLWpFbFlDbDF3WXlIYk00TVlUZFFBZDh0VW5rTVFwbGZ2VUR2bi1USm9hMDZYbjNySXYzcTZVeUg1WFNkVmpkbU94elBmR2hFSU1BSU1QNjBYMjRFSW1rdmNqY3VyRjhiWlFzS2F0N0hNN2kwdnR1STFrLWVVOElHVHVGeTFRTTZ3S3VERHh0cW5kVkplc2Q1YWtOa2d1UFpGZGl1ODZOT3FzUUtFTTBZTmtkWFBkeFRsOHAyOEpQRTVPVnFjcS12N1FSS3VfdUt6eHd4MXhqUWcxZUt4blhWUkRJclpuaWdxY3Y4VVR0RmdxeE9fSzhod0lob0ZXdGVvZUo2SlJfdDliNnRaVlp2Skp6RTN3R3BoMFpXa29qNXFwajJNaWJqSHowNGY0WFNURG9nUkZEZE92ejh3eUN6d01EM3d5aS14VjJ3M3hQZG5FaEJpaWNOdTNOVXJldjlpMndLWDl5VGdHZ3lSTUlUSTlKdVlYTFJfZkZJLm0zdTgNCg==";
@@ -94,8 +92,6 @@ var qqnn = "aHR0cHM6Ly9obHMtNDQuaGVyb2t1YXBwLmNvbS9odHRwczovL3ZpZGVvLXdlYXZlci5m
   function playError(){var delay=initialDelay;clearInterval(timer);timer=setInterval(function(){var messageElement=document.getElementById("error-message");delay-=1;if(delay){messageElement.querySelector("span").innerHTML=delay;messageElement.style.display="block"}else{clearInterval(timer);messageElement.style.display="none";
   player.stop();player.play()}},1000)}unmuteBtn.addEventListener("click",function(){player.unmute()});function startMuted(){var d=/constructor/i.test(window.HTMLElement)||(function(a){return a.toString()==="[object SafariRemoteNotification]"})(!window.safari||(typeof safari!=="undefined"&&safari.pushNotification));if(d){return true}
   var c=!!window.chrome&&!!window.chrome.webstore;if(c&&getChromeVersion()>=66){return true}return false}function getChromeVersion(){var a=navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);return a?parseInt(a[2],10):false};</script>
-
-
  <style>
 /* <![CDATA[ */
 
@@ -240,7 +236,6 @@ button.media-control-button.media-control-icon.stopped svg{height:16px!important
 </style>
 	  
 <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="bdb38791070e20a1557590ca-|49" defer=""></script> 
-
 </body>
 </html> 
  
