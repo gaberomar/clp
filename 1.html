@@ -131,24 +131,7 @@ var qqnn = "aHR0cHM6Ly9obHMtNDQuaGVyb2t1YXBwLmNvbS9odHRwczovL3ZpZGVvLXdlYXZlci5m
       hostname = hostname.split("?")[0];
       return hostname;
     };
-    
-    console.log(hostname);
-    var hostname = extractHostname(document.referrer);
-    var whitedomains = "dalbouh.club";
-    //var whitedomains = "http://raw.githack.com/gaberomar/clp/master/1.html";
-    var whitelist = whitedomains.split(",");
-    if (!isInArray(hostname, whitedomains) || !document.referrer) {
-        setTimeout(function(){
-        document.location.href = "http://raw.githack.com/gaberomar/clp/master/1.html";
-      },2000);
-    }
-    if (!document.referrer) {
-    //if (isInArray(hostname, blacklist) || !document.referrer) {
-      window.open('http://raw.githack.com/gaberomar/clp/master/1.html');
-      setTimeout(function(){
-        document.location.href = "http://raw.githack.com/gaberomar/clp/master/1.html";
-      },1000);
-      
+       
     }
    
 </script>
