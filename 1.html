@@ -123,9 +123,13 @@ html{font-family:Verdana,Arial,Helvetica,sans-serif}
  <div id="player" style="width:100%;height:100%;"></div>
 <div id="error-message"><h2>koraglive</h2><p>Retrying in <span>10</span> Secondi ...</p><a href="/" target="_blank"><img src="https://lh3.googleusercontent.com/-4n5xlmjcKOw/YL-xQYxJVOI/AAAAAAAAM_A/8FTBsUqUmHw408zfyoAL-7udu_YItb8JgCLcBGAsYHQ/s300-rw-e90-w300/play.png" /></a></div>
  <script type='bdb38791070e20a1557590ca-text/javascript'>  //<![CDATA[
+ if (navigator.userAgent.match(/Android/i) ||  navigator.userAgent.match(/webOS/i) ||	 navigator.userAgent.match(/iPhone/i) ||     navigator.userAgent.match(/iPod/i) ||          navigator.userAgent.match(/iPad/i) ||		 navigator.userAgent.match(/Mobile Safari/i) ||            navigator.userAgent.match(/Blackberry/i)){
+document.write("\<video style=\"z-index:2;width:100%;height:100%;background-color:#000;-o-object-fit:fill;object-fit:fill\"  controls=\"controls\" autoplay=\"true\" preload=\"auto\" height=\"auto\" src=\""+sv+"\"\>\<\/video\>");
+			 }else {	                                         					
 var player,initialDelay=11,timer,unmuteBtn=document.getElementById("unmute");
 var qqnn = "aHR0cHM6Ly9obHMtNDQuaGVyb2t1YXBwLmNvbS9odHRwczovL3ZpZGVvLXdlYXZlci5mcmEwMi5obHMudHR2bncubmV0L3YxL3BsYXlsaXN0L0NySUNuWXd5c1d3TXBXcTVQMVVLdVprZHZJemlhTXFSQ0R3UWk0Q3VTcHp2MnNwRzFLOV9HaHRKNW9QLTlwX3J0aXBPTmExclNHSUJBZUJnUDhxLWpFbFlDbDF3WXlIYk00TVlUZFFBZDh0VW5rTVFwbGZ2VUR2bi1USm9hMDZYbjNySXYzcTZVeUg1WFNkVmpkbU94elBmR2hFSU1BSU1QNjBYMjRFSW1rdmNqY3VyRjhiWlFzS2F0N0hNN2kwdnR1STFrLWVVOElHVHVGeTFRTTZ3S3VERHh0cW5kVkplc2Q1YWtOa2d1UFpGZGl1ODZOT3FzUUtFTTBZTmtkWFBkeFRsOHAyOEpQRTVPVnFjcS12N1FSS3VfdUt6eHd4MXhqUWcxZUt4blhWUkRJclpuaWdxY3Y4VVR0RmdxeE9fSzhod0lob0ZXdGVvZUo2SlJfdDliNnRaVlp2Skp6RTN3R3BoMFpXa29qNXFwajJNaWJqSHowNGY0WFNURG9nUkZEZE92ejh3eUN6d01EM3d5aS14VjJ3M3hQZG5FaEJpaWNOdTNOVXJldjlpMndLWDl5VGdHZ3lSTUlUSTlKdVlYTFJfZkZJLm0zdTgNCg==";
-				var _0xb348=["\x61\x74\x6F\x62"];qqnn= window[_0xb348[0]](qqnn)
+var _0xb348=["\x61\x74\x6F\x62"];qqnn= window[_0xb348[0]](qqnn)
+          }
                 
   var player = new Clappr.Player({
   source: sv,
@@ -229,27 +233,10 @@ button.media-control-button.media-control-icon.stopped svg{height:16px!important
 }
 /* ]]> */
 </style>
-
-
 <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="bdb38791070e20a1557590ca-|49" defer=""></script> 
 </body>
 </HTML> 
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
