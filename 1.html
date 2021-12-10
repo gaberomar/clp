@@ -1,5 +1,21 @@
 ﻿
 <!DOCTYPE html><html><head>
+
+<script>
+
+function getParam ( sname )
+{
+  var params = location.search.substr(location.search.indexOf("?")+1);
+  var sval =  params.replace("sv=", "");
+  
+  return sval;
+}
+var sv = getParam("sv");
+
+</script>
+<script>
+start_playing_m3u8();
+</script>	
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><style>body,html{height:100%;width:100%;margin:0;padding:0}#q{width:100%;height:100%}.cookie-choices-info {
 display:none
 }
@@ -44,19 +60,6 @@ html{font-family:Verdana,Arial,Helvetica,sans-serif}
 #unmute{display:none; z-index:2147483647;  color:#fff;  position: absolute;  bottom:60px;  right:40px;  width:100px;  border:2px solid #fff;  text-align: center;  padding:4px 0;  border-radius:2px;  cursor: pointer; opacity:0.8}
 #unmute:hover{opacity:1}</style>
  
-<script>
-
-function getParam ( sname )
-{
-  var params = location.search.substr(location.search.indexOf("?")+1);
-  var sval =  params.replace("sv=", "");
-  
-  return sval;
-}
-var sv = getParam("sv");
-
-</script>
-
  </head><body>
 <script type='text/javascript'>
 //<![CDATA[
